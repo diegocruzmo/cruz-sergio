@@ -492,7 +492,7 @@ summary {
 }
 .spotify-button {
   color: white;
-  background: #1d7440;
+  background: #062845;
   text-decoration: none;
 }
 .spotify-button svg {
@@ -512,11 +512,27 @@ footer {
   color: rgba(255, 255, 255, 0.72);
   background: var(--navy-deep);
   font-size: 0.8rem;
+  gap: 24px;
 }
 footer a {
   text-decoration: none;
 }
 footer .brand-mark {
+  color: var(--gold);
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+.social-link {
+  color: rgba(255, 255, 255, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+.social-link:hover {
   color: var(--gold);
 }
 
@@ -626,6 +642,11 @@ footer .brand-mark {
   footer {
     flex-wrap: wrap;
     gap: 20px;
+  }
+  .social-links {
+    order: -1;
+    width: 100%;
+    justify-content: center;
   }
 }
 

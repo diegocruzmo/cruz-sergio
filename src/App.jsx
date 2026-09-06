@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { songs } from './data/songs'
 import { contactEmail, videos } from './data/content'
+import { socialLinks } from './data/social-links'
 
 function Header() {
   const [open, setOpen] = useState(false)
@@ -71,7 +72,7 @@ function AlbumCover() {
     <div className='cover-wrap'>
       {!missing && (
         <img
-          src='/images/portada-memorias-artesanales.jpg'
+          src='/images/portada.png'
           alt='Portada del álbum Memorias Artesanales'
           onError={() => setMissing(true)}
         />
@@ -268,8 +269,27 @@ export default function App() {
         </section>
       </main>
       <footer>
-        <span className='brand-mark'>SC</span>
+        <span className='brand-mark'>
+          <img src='/images/logo.jpg' alt='Sergio Cruz' />
+        </span>
+
         <p>© {new Date().getFullYear()} Sergio Cruz</p>
+
+        <nav className='social-links' aria-label='Redes sociales'>
+          {socialLinks.map(({ name, href, icon: Icon }) => (
+            <a
+              key={name}
+              href={href}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={name}
+              className='social-link'
+            >
+              <Icon size={18} />
+            </a>
+          ))}
+        </nav>
+
         <a href={`mailto:${contactEmail}`}>Contacto</a>
       </footer>
     </>
